@@ -4,20 +4,25 @@ This is a web page that is going to keep track of the statistics for my fantasy 
 
 
 Information to keep track of
-// name
-// picture
-// stats
-    // hitters
-        // Hits/AB
-        // Runs
-        // Homeruns
-        // RBIs
-        // Stolen bases
-        // OPS
-    // pitchers
-        // Innings Pitched
-        // Saves
-        // Strikeouts
-        // ERA
-        // WHIP
-        // Quality Starts
+{
+    name: String,
+    image: String,
+    stats: {
+        hitters: {
+            HitsAB: String,
+            R: String,
+            HR: String,
+            RBI: String,
+            SB: String,
+            OPS: String
+        },
+        pitchers: {
+            IP: String,
+            SV: String,
+            K: String,
+            ERA: String,
+            WHIP: String,
+            QS: String
+        }
+    }
+}
