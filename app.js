@@ -3,15 +3,16 @@ app = express(),
 bodyParser = require("body-parser"),
 mongoose = require("mongoose");
 
-// App config
-mongoose.connect("mongodb://localhost/fantasy_stats");
+// App Config
+mongoose.connect("mongodb://localhost/baseball");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Mongoose/model config
-var statSchema = new mongoose.Schema({
+var ballSchema = new mongoose.Schema({
     name: String,
+    team: String,
     image: String,
     HitsAB: String,
     R: String,
@@ -21,28 +22,36 @@ var statSchema = new mongoose.Schema({
     OPS: String
 });
 
-var Stat = mongoose.model("Stat", statSchema);
+var Ball = mongoose.model("Ball", ballSchema);
 
-Stat.create({
-    name: "Kris Bryant",
-    image: "http://mlb.mlb.com/mlb/images/players/head_shot/592178.jpg",
-    HitsAB: "82/290",
-    R: "46",
-    HR: "11",
-    RBI: "42",
-    SB: "2",
-    OPS: ".878"
-}, function(err, stat) {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log("New Stats!");
-        console.log(stat);
-    }
+// Ball.create({
+//     name: "Kris Bryant",
+//     team: "Cubs",
+//     image: "http://1440wrok.com/files/2015/09/Kris-Bryant.jpg?w=980&q=75",
+//     HitsAB: "82/290",
+//     R: "46",
+//     HR: "11",
+//     RBI: "42",
+//     SB: "2",
+//     OPS: ".878"
+// });
+
+app.get("/", function(req, res) {
+    res.redirect("/stats");
+});
+
+// INDEX ROUTE
+app.get("/stats", function(req, res) {
+    Ball.find({}, function(err, balls) {
+        if(err) {
+            console.log("ERROR!");
+        } else {
+            res.render("index", {balls: balls});
+        }
+    });
 });
 
 
-
 app.listen(3000, function() {
-    console.log("Stats server has started!");
+    console.log("Fantasy stats server has started!")
 });
