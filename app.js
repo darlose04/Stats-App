@@ -11,15 +11,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Mongoose/model config
 var ballSchema = new mongoose.Schema({
-    name: String,
-    team: String,
+    batter: String,
+    batter_team: String,
     image: String,
     HitsAB: String,
     R: String,
     HR: String,
     RBI: String,
     SB: String,
-    OPS: String
+    OPS: String,
+    pitcher: String,
+    pitcher_team: String,
+    IP: String,
+    SV: String,
+    K: String,
+    ERA: String,
+    WHIP: String,
+    QS: String
 });
 
 var Ball = mongoose.model("Ball", ballSchema);
