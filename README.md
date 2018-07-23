@@ -26,3 +26,8 @@ Information to keep track of
         }
     }
 }
+
+Potential ideas:
+    -Make the index page a grid of pictures of the players on my team. Click the picture to go to their stats page 
+    -Have a separate page for the table of stats of the entire team
+    -Have separate pages for hitters and pitchers
