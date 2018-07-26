@@ -32,17 +32,6 @@ var ballSchema = new mongoose.Schema({
 
 var Ball = mongoose.model("Ball", ballSchema);
 
-// Ball.create({
-//     name: "Kris Bryant",
-//     team: "Cubs",
-//     image: "http://1440wrok.com/files/2015/09/Kris-Bryant.jpg?w=980&q=75",
-//     HitsAB: "82/290",
-//     R: "46",
-//     HR: "11",
-//     RBI: "42",
-//     SB: "2",
-//     OPS: ".878"
-// });
 
 app.get("/", function(req, res) {
     res.redirect("/home");
