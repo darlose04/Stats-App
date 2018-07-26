@@ -22,6 +22,7 @@ var ballSchema = new mongoose.Schema({
     OPS: String,
     pitcher: String,
     pitcher_team: String,
+    // image: String,
     IP: String,
     SV: String,
     K: String,
@@ -39,7 +40,13 @@ app.get("/", function(req, res) {
 
 // INDEX ROUTE
 app.get("/home", function(req, res) {
-    res.render("index");
+    Ball.find({}, function(err, balls) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("index", {balls: balls});
+        }
+    });
 });
 
 // Hitters page
@@ -63,9 +70,6 @@ app.get("/pitchers", function(req, res) {
         }
     });
 });
-
-
-
 
 
 
