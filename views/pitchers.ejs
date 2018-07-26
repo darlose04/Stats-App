@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Team</th>
+                <th>IP</th>
+                <th>SV</th>
+                <th>K</th>
+                <th>ERA</th>
+                <th>WHIP</th>
+                <th>QS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% balls.forEach(function(ball){ %>
+                <tr>
+                    <td><%= ball.pitcher %></td>
+                    <td><%= ball.pitcher_team %></td>
+                    <td><%= ball.IP %></td>
+                    <td><%= ball.SV %></td>
+                    <td><%= ball.K %></td>
+                    <td><%= ball.ERA %></td>
+                    <td><%= ball.WHIP %></td>
+                    <td><%= ball.QS %></td>
+                </tr>
+                <% }) %>
+        </tbody>
+</table>
+</div>
+
+
+
+<% include ./partials/footer %>
