@@ -2,64 +2,76 @@
 
 <div class="ui grid">
     <div class="ui four column grid">
-        <div class="row">
-            <div class="column">
-            <img src="http://mlb.mlb.com/mlb/images/players/head_shot/518735.jpg" alt=""></div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/519048.jpg" alt="">
+            <div class="row">
+                <% balls.forEach(function(ball) { %>
+                    <div class="column"><img src="<%= ball.image %>" alt=""></div>
+                <% }) %>
             </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/606299.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/656305.jpg" alt="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/516416.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/595885.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/608365.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/519317.jpg" alt="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/665742.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/545361.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/502110.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/624424.jpg" alt="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/571448.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="http://mlb.mlb.com/mlb/images/players/head_shot/592178.jpg" alt="">
-            </div>
-            <div class="column">
-                <img src="" alt="">
-            </div>
-            <div class="column">
-                <img src="" alt="">
-            </div>
-        </div>
     </div>
-        
-</div>    
 </div>
+
+<!-- <div class="ui grid"> -->
+    <!-- <div class="ui four column grid"> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="column"> -->
+            <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/518735.jpg" alt=""></div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/519048.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/606299.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/656305.jpg" alt=""> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/516416.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/595885.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/608365.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/519317.jpg" alt=""> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/665742.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/545361.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/502110.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/624424.jpg" alt=""> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/571448.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="http://mlb.mlb.com/mlb/images/players/head_shot/592178.jpg" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="" alt=""> -->
+            <!-- </div> -->
+            <!-- <div class="column"> -->
+                <!-- <img src="" alt=""> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+<!--          -->
+<!-- </div>     -->
+<!-- </div> -->
+
+
 
 <% include ./partials/footer %>
