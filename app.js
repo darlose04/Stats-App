@@ -45,19 +45,39 @@ var Ball = mongoose.model("Ball", ballSchema);
 // });
 
 app.get("/", function(req, res) {
-    res.redirect("/stats");
+    res.redirect("/home");
 });
 
 // INDEX ROUTE
-app.get("/stats", function(req, res) {
+app.get("/home", function(req, res) {
+    res.render("index");
+});
+
+// Hitters page
+app.get("/hitters", function(req, res) {
     Ball.find({}, function(err, balls) {
         if(err) {
             console.log("ERROR!");
         } else {
-            res.render("index", {balls: balls});
+            res.render("hitters", {balls: balls});
         }
     });
 });
+
+// Pitchers page
+app.get("/pitchers", function(req, res) {
+    Ball.find({}, function(err, balls) {
+        if(err) {
+            console.log("ERROR!");
+        } else {
+            res.render("pitchers", {balls: balls});
+        }
+    });
+});
+
+
+
+
 
 
 app.listen(3000, function() {
