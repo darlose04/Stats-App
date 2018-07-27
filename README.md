@@ -34,3 +34,4 @@ Potential ideas:
     - Figure out how to automatically populate the stats tables from a CSV or other spreadsheet format
     - Figure out how to automatically update the stats tables every day
     - Will need to eventually style everything, but that can wait until near the end
+    -Import info into correct MongoDB database and connect it to web app
