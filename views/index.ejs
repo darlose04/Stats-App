@@ -3,14 +3,12 @@
 <div class="ui grid">
     <div class="ui four column grid">
             <div class="row">
-                <% balls.forEach(function(ball) { %>
-                    <div class="column"><img src="<%= ball.image %>" alt=""></div>
+                <% images.forEach(function(image) { %>
+                    <div class="column"><img src="<%= image.image %>" alt=""></div>
                 <% }) %>
             </div>
     </div>
 </div>
-
-
 
 
 <% include ./partials/footer %>
