@@ -10,8 +10,16 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Mongoose/model config
-var ballSchema = new mongoose.Schema({
+var imageSchema = new mongoose.Schema({
+    image: String
+});
+
+var Image = mongoose.model("Image", imageSchema);
+
+var hitterSchema = new mongoose.Schema({
     batter: String,
+    image: String,
+    batter_pos: String,
     batter_team: String,
     image: String,
     HitsAB: String,
@@ -19,10 +27,16 @@ var ballSchema = new mongoose.Schema({
     HR: String,
     RBI: String,
     SB: String,
-    OPS: String,
+    OPS: String
+});
+
+var Hitter = mongoose.model("Hitter", hitterSchema);
+
+var pitcherSchema = new mongoose.Schema({
     pitcher: String,
+    image: String,
+    pitcher_pos: String,
     pitcher_team: String,
-    // image: String,
     IP: String,
     SV: String,
     K: String,
@@ -31,8 +45,7 @@ var ballSchema = new mongoose.Schema({
     QS: String
 });
 
-var Ball = mongoose.model("Ball", ballSchema);
-
+var Pitcher = mongoose.model("Pitcher", pitcherSchema);
 
 app.get("/", function(req, res) {
     res.redirect("/home");
@@ -40,33 +53,33 @@ app.get("/", function(req, res) {
 
 // INDEX ROUTE
 app.get("/home", function(req, res) {
-    Ball.find({}, function(err, balls) {
+    Image.find({}, function(err, images) {
         if(err) {
             console.log(err);
         } else {
-            res.render("index", {balls: balls});
+            res.render("index", {images: images});
         }
     });
 });
 
 // Hitters page
 app.get("/hitters", function(req, res) {
-    Ball.find({}, function(err, balls) {
+    Hitter.find({}, function(err, hitters) {
         if(err) {
             console.log("ERROR!");
         } else {
-            res.render("hitters", {balls: balls});
+            res.render("hitters", {hitters: hitters});
         }
     });
 });
 
 // Pitchers page
 app.get("/pitchers", function(req, res) {
-    Ball.find({}, function(err, balls) {
+    Pitcher.find({}, function(err, pitchers) {
         if(err) {
             console.log("ERROR!");
         } else {
-            res.render("pitchers", {balls: balls});
+            res.render("pitchers", {pitchers: pitchers});
         }
     });
 });
