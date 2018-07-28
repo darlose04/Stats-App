@@ -5,6 +5,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Position</th>
                 <th>Team</th>
                 <th>H/AB</th>
                 <th>R</th>
@@ -15,17 +16,17 @@
             </tr>
         </thead>
         <tbody>
-            <% balls.forEach(function(ball){ %>
-                <!-- Try using an if statement to check if it is a hitter -->
+            <% hitters.forEach(function(hitter){ %>
                 <tr>
-                    <td><%= ball.batter %></td>
-                    <td><%= ball.batter_team %></td>
-                    <td><%= ball.HitsAB %></td>
-                    <td><%= ball.R %></td>
-                    <td><%= ball.HR %></td>
-                    <td><%= ball.RBI %></td>
-                    <td><%= ball.SB %></td>
-                    <td><%= ball.OPS %></td>
+                    <td><%= hitter.batter %></td>
+                    <td><%= hitter.batter_pos %></td>
+                    <td><%= hitter.batter_team %></td>
+                    <td><%= hitter.HitsAB %></td>
+                    <td><%= hitter.R %></td>
+                    <td><%= hitter.HR %></td>
+                    <td><%= hitter.RBI %></td>
+                    <td><%= hitter.SB %></td>
+                    <td><%= hitter.OPS %></td>
                 </tr>
                 <% }) %>
         </tbody>
