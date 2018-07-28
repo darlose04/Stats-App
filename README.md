@@ -35,3 +35,7 @@ Potential ideas:
     - Figure out how to automatically update the stats tables every day
     - Will need to eventually style everything, but that can wait until near the end
     -Import info into correct MongoDB database and connect it to web app
+    - Was able to get every player loaded into the database and linked to the website. Having trouble properly formatting the tables on the hitters and pitchers pages.
+    -Also would like to sort the player images alphabetically and/or by position.
+    -Also need to add player positions to the database
+    
