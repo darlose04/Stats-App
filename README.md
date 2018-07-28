@@ -38,4 +38,7 @@ Potential ideas:
     - Was able to get every player loaded into the database and linked to the website. Having trouble properly formatting the tables on the hitters and pitchers pages.
     -Also would like to sort the player images alphabetically and/or by position.
     -Also need to add player positions to the database
+    -Try creating two different schemas and mongoose models
+    -Also try using an if statement checking for pitchers or hitters in the ejs files
+
     
